@@ -1,19 +1,63 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
 
+function maxOfTwoNumbers(a,b) {
+  if (a >= b) {
+    return a
+  }
+    else if (b >= a) {
+     return b
+    } 
+  }
+
+console.log(maxOfTwoNumbers(10,25))
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(words) {    //should return null when called with an empty array
+if (words.length === 0){
+  return null;
+}
+else if (words.length === 1)   //should return the word when called with a single-word array
+  return words[0]
+
+let longestWord =  ""           //should return the first occurrence of the word when longest have multiple occurrences
+
+for (let i = 0; i <words.length; i++ ) {
+  if (words.length < words[i].length)
+  words = words[i]
+}
+return words
+}
+
+console.log(findLongestWord(words))
+
+
+
+
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(numbers)  {  //should declare a function named sumNumbers
+let sum = 0 
+
+if (numbers.length === 0) {
+  return 0;                       // should return zero if receives an empty array when called
+}  
+
+for (let i = 0 ; i < numbers.length; i++) {  //should return the sum with one number array
+  sum +=numbers[i]
+}
+
+return sum
+
+}
+
+console.log(sumNumbers(0,0,0,0))
 
 
 
@@ -22,17 +66,97 @@ function sum() {}
 
 
 
+
 // Iteration #4: Calculate the average
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+const emptyArray = []
 
-function averageNumbers() {}
+
+function averageNumbers(numbersAvg) {   //should declare a function named averageNumbers
+
+if (numbersAvg.length === 0) {       //should return null if receives an empty array when called
+  return null;
+}
+
+for (let i = 0 ; i < numbersAvg.length; i++) {  //should return the average of a one-element array
+  if (numbersAvg.length === 1) {
+    return numbersAvg[i]
+  }
+ 
+}
+let sum1 = 0
+
+for (let i = 0 ; i < numbersAvg.length; i++) {  
+  sum1 +=numbersAvg[i] 
+}
+    
+  return sum1/numbersAvg.length         //should return the average
+   
+}
+
+console.log("hello")
+console.log(averageNumbers(255))
+
+
 
 
 // Level 2: Array of strings
+
+// const letterCounter = []  // create an empty array for the letter counter
+
+// for (let i=0; i<wordsArr.length; i++){
+//   let word = wordsArr[i]   // declare variabel for the word which is equare to the indexed word in the array
+//   let count = 0    // declare variabel for the counter for each word
+
+//     for (let j=0; j<word.length; j++){
+//       count ++
+//     }
+
+// letterCounter.push(count)
+
+// }
+
+// console.log(letterCounter);
+
+// let sum2 = 0
+
+// function averageWordLength(letterCounter) {
+//   for (let k=0; k<letterCounter.length; k ++){
+//      sum2 += letterCounter[k]
+//   }
+
+//   return sum2/wordsArr.length       // should return the average
+
+// }
+
+// console.log(averageWordLength(letterCounter)); 
+
+
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+function averageWordLength(wordsArr){
+  if (wordsArr.length === 0){     
+
+    return null;   // If it's empty, return null as there are no words to calculate the average for
+  }
+
+  let letterCount = 0;   //  Initialize a variable to store the total number of characters in all words
+
+
+  for (let i = 0; i <wordsArr.length; i ++){     // Loop through the array of words
+    letterCount += wordsArr[i].length;        // Add the length of each word to the totalCharacters variable. 'wordsArr[i]' accesses the element at the current 'i'th position in the array.
+                                            //'.length' returns the number of characters (letters) in the current word.
+  }
+  return letterCount/ wordsArr.length  //Calculate the average word length by dividing the total characters by the number of words
+
+}
+
+console.log(averageWordLength(wordsArr));
+
+
+
+
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -52,7 +176,53 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+
+
+function uniquifyArray(wordsUnique) {
+  if (wordsUnique.length ===0){
+    return null       // return null if empty 
+  }
+
+  const uniqueArray = [];    // Define an empty array to store unique words
+
+
+  for (let i=0; i < wordsUnique.length; i++){  // Loop through the array wordsUnique
+    let currentWord = wordsUnique[i]       //  // Get the current word at the current index
+
+    if (uniqueArray.indexOf(currentWord) === -1) {       // Check if the current word is not already in the uniqueArray
+// The indexOf method is used to find the index of a specific element (currentWord) within an array (uniqueArray). 
+//If the element is not found in the array, the indexOf method returns -1.
+      uniqueArray.push(currentWord)   //  If not, add it to the uniqueArray
+    }
+  }
+
+  return uniqueArray  //// Return the array containing unique words
+
+}
+
+console.log(uniquifyArray(wordsUnique));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
