@@ -50,7 +50,7 @@ if (numbers.length === 0) {
 }  
 
 for (let i = 0 ; i < numbers.length; i++) {  //should return the sum with one number array
-  sum +=numbers[i]
+  sum +=numbers[i]   // += "add and assign"  , [i] is the loop counter, represents each element of the array as loop goes on
 }
 
 return sum
@@ -96,7 +96,7 @@ for (let i = 0 ; i < numbersAvg.length; i++) {
 }
 
 console.log("hello")
-console.log(averageNumbers(255))
+console.log(averageNumbers(numbersAvg))
 
 
 
@@ -207,29 +207,34 @@ console.log(uniquifyArray(wordsUnique));
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Iteration #6: Find elements
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
+const wordToFind = 'starting'
 
-function doesWordExist() {}
+function doesWordExist(wordsFind, wordToFind) {
+  if (wordsFind.length === 0 ){
+  return null      // return null if empty 
+  }
+
+for (let i=0; i<wordsFind.length; i++) {
+if (wordsFind[i]=== wordToFind){
+  return true
+}
+
+}
+return false
+
+
+}
+
+
+
+
+console.log(doesWordExist(wordsFind, wordToFind))
+
+
+
+
 
 
 
